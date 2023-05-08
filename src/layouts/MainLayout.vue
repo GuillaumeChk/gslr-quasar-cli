@@ -71,6 +71,7 @@
           tag="to"
           :key="route.to"
           :to="route.to"
+          :active="false"
         >
           <q-item-section v-if="route.icon" avatar>
             <q-icon :name="route.icon" />
