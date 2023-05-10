@@ -14,7 +14,7 @@
         <div class="column q-pr-xl justify-center">
           <q-img
             style="max-width: 150px; min-width: 100px"
-            src="/GSLR_3_b.svg"
+            src="../assets/GSLR_3_b.svg"
             fit="contain"
           ></q-img>
         </div>
