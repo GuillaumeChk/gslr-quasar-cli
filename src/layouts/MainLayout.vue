@@ -14,7 +14,7 @@
         <div class="column q-pr-xl justify-center">
           <q-img
             style="max-width: 150px; min-width: 100px"
-            src="../assets/GSLR_3_b.svg"
+            src="/GSLR_3_b.svg"
             fit="contain"
           ></q-img>
         </div>
@@ -60,8 +60,19 @@
       </q-tabs>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered>
-      <q-list>
+    <q-drawer v-model="leftDrawerOpen" elevated class="col items-center">
+      <div class="row justify-center">
+        <q-btn
+          flat
+          rounded
+          size="xl"
+          class="q-ma-lg text-brand"
+          @click="toggleLeftDrawer"
+        >
+          <q-icon name="close" size="lg" class="textSize" />
+        </q-btn>
+      </div>
+      <q-list class="q-gutter-y-sm text-brand">
         <q-item
           v-for="route in routesList"
           clickable
@@ -69,6 +80,7 @@
           :key="route.to"
           :to="route.to"
           :active="false"
+          class="items-center"
         >
           <q-item-section v-if="route.icon" avatar>
             <q-icon :name="route.icon" />
