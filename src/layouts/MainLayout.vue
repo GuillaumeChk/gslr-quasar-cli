@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar class="wrapper">
+    <q-header reveal :reveal-offset="100" elevated class="bg-white text-brand">
+      <q-toolbar class="q-pa-xl justify-between">
         <q-btn
           flat
           dense
@@ -11,28 +11,41 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-img
-          class="q-ma-md"
-          style="max-width: 200px; min-width: 50px"
-          src="../assets/quasar-logo-vertical.svg"
-          fit="contain"
-        ></q-img>
-        <q-toolbar-title>
-          <h3>GSLR Agencements</h3>
-          <p>Menuiserie — Agencements — Pose de cuisine — Sur mesure…</p>
-        </q-toolbar-title>
-        <div class="column justify-center">
-          <p>2000  Neuchâtel</p>
-          <p>TÉL. +41 XX XXX XX XX</p>
-          <p>Email contact@gslr.ch</p>
+        <div class="column q-pr-xl justify-center">
+          <q-img
+            style="max-width: 150px; min-width: 100px"
+            src="../assets/GSLR_3_b.svg"
+            fit="contain"
+          ></q-img>
         </div>
+        <div class="column gt-xs text-center">
+          <span
+            style="font-size: 2.5em; white-space: break-spaces"
+            class="text-weight-normal"
+            >GSLR Agencements</span
+          >
+          <span class="wrap text-weight-light" style="font-size: 1.3em">
+            Menuiserie    —    Agencements    —    Pose de cuisine    —    Sur
+            mesure
+          </span>
+        </div>
+        <div
+          class="column q-gutter-y-sm justify-evenly gt-sm text-grey"
+          style="font-size: 0.8em"
+        >
+          <span>2000  Neuchâtel</span>
+          <span>Tél: +41 XX XXX XX XX</span>
+          <span>Email: contact@gslr.ch</span>
+        </div>
+        <div class="lt-sm"></div>
       </q-toolbar>
 
       <q-tabs
         v-model="tab"
         no-caps
+        dense
         align="justify"
-        class="gt-xs text-white wrapper"
+        class="gt-xs bg-brand text-white"
       >
         <q-route-tab
           v-for="route in routesList"
@@ -41,25 +54,9 @@
           exact
           :to="route.to"
         >
-          <span class="gt-sm biggerText">{{ route.title }}</span>
-          <span class="lt-md">{{ route.title }}</span>
+          <span class="gt-sm biggerText text-uppercase">{{ route.title }}</span>
+          <span class="lt-md text-uppercase">{{ route.title }}</span>
         </q-route-tab>
-        <!-- <q-route-tab name="unique" exact to="/prestations">
-          <span class="gt-sm biggerText">Unique</span>
-          <span class="lt-md">Unique</span>
-        </q-route-tab>
-        <q-route-tab name="loisirs" exact to="/loisirs">
-          <span class="gt-sm biggerText">Loisirs</span>
-          <span class="lt-md">Loisirs</span>
-        </q-route-tab>
-        <q-route-tab name="plaisirs" exact to="/plaisirs">
-          <span class="gt-sm biggerText">Plaisirs</span>
-          <span class="lt-md">Plaisirs</span>
-        </q-route-tab>
-        <q-route-tab name="autour" exact to="/autour">
-          <span class="gt-sm biggerText">Autour</span>
-          <span class="lt-md">Autour</span>
-        </q-route-tab> -->
       </q-tabs>
     </q-header>
 
@@ -84,7 +81,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="wrapper q-px-md q-pb-xl">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -128,6 +125,6 @@ function toggleLeftDrawer() {
 
 <style>
 .biggerText {
-  font-size: 20px;
+  font-size: 1em;
 }
 </style>
