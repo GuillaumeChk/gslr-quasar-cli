@@ -16,7 +16,7 @@ commit
 
 `git fetch --prune`
 
-`git subtree push --prefix dist origin gh-pages`
+`git subtree push --prefix dist/spa origin gh-pages`
 
 ## Install the dependencies
 
