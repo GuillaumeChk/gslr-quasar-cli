@@ -12,11 +12,11 @@
           @click="toggleLeftDrawer"
         />
         <div class="column q-pr-xl justify-center">
-          <!-- <q-img
+          <q-img
             style="max-width: 150px; min-width: 100px"
-            src="../assets/GSLR_3_b.svg"
+            src="GSLR_3_b.svg"
             fit="contain"
-          ></q-img> -->
+          ></q-img>
         </div>
         <div class="column gt-xs text-center">
           <span
