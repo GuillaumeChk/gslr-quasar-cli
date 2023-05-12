@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="wrapper">
     <h4>Contact</h4>
 
     <h6>GSLR Agencements</h6>

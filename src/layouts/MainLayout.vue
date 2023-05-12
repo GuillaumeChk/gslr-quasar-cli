@@ -1,22 +1,34 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal :reveal-offset="100" elevated class="bg-white text-brand">
-      <q-toolbar class="justify-between q-pa-md">
-        <q-btn
-          flat
-          dense
-          round
-          class="lt-sm q-mx-sm"
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-        <div class="q-pa-xs q-px-lg">
-          <q-img
-            style="max-width: 150px; min-width: 100px"
-            src="GSLR_3_b.svg"
-            fit="contain"
-          ></q-img>
+    <q-header
+      id="navbar"
+      :class="
+        route.name === 'entreprise' ? 'navbar-transparent' : 'navbar-solid'
+      "
+      height-hint="98"
+    >
+      <q-toolbar
+        id="toolbar"
+        class="justify-between q-pa-md"
+        :class="route.name === 'entreprise' ? 'gradient' : ''"
+      >
+        <div class="row">
+          <q-btn
+            flat
+            dense
+            round
+            class="q-mx-sm"
+            icon="menu"
+            aria-label="Menu"
+            @click="toggleLeftDrawer"
+          />
+          <div class="q-pa-xs q-px-lg">
+            <q-img
+              style="max-width: 150px; min-width: 100px"
+              src="GSLR_3_b.svg"
+              fit="contain"
+            ></q-img>
+          </div>
         </div>
         <div class="gt-xs q-gutter-x-lg q-px-md">
           <div
@@ -39,7 +51,7 @@
           </div>
         </div>
         <div
-          class="gt-xs column q-gutter-y-sm justify-evenly text-grey"
+          class="gt-xs column q-gutter-y-sm justify-evenly"
           style="font-size: 0.6em"
         >
           <div style="display: inline-block; white-space: nowrap">
@@ -52,7 +64,7 @@
         <div class="lt-sm" style="width: 50px"></div>
       </q-toolbar>
 
-      <q-tabs
+      <!-- <q-tabs
         v-model="tab"
         no-caps
         dense
@@ -72,10 +84,15 @@
             route.title
           }}</span>
         </q-route-tab>
-      </q-tabs>
+      </q-tabs> -->
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" elevated class="col items-center">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      elevated
+      overlay
+      class="col items-center"
+    >
       <div class="row justify-center">
         <q-btn
           flat
@@ -108,17 +125,19 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container class="wrapper q-px-md q-pb-xl">
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from "vue";
-// import EssentialLink from "components/EssentialLink.vue";
+import { ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 let tab = ref("unique");
+
+let route = useRoute();
 
 const routesList = [
   {
@@ -148,4 +167,49 @@ const leftDrawerOpen = ref(false);
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
+
+// Navbar — trantparent to solid
+// let topTransparent = true;
+// uncomment below to enable on specific pages only
+let topTransparent = ref(false);
+watch(
+  () => route.name,
+  () => {
+    topTransparent.value = route.name === "entreprise";
+  },
+  { immediate: true }
+);
+
+window.onscroll = function () {
+  if (topTransparent.value) {
+    scrollFunction();
+  }
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").classList.add("navbar-solid");
+    document.getElementById("navbar").classList.remove("navbar-transparent");
+    document.getElementById("toolbar").classList.remove("gradient");
+  } else {
+    document.getElementById("navbar").classList.add("navbar-transparent");
+    document.getElementById("navbar").classList.remove("navbar-solid");
+    document.getElementById("toolbar").classList.add("gradient");
+  }
+}
 </script>
+
+<style scoped>
+.navbar-solid {
+  color: #395875;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgb(0 0 0 / 20%);
+}
+.navbar-transparent {
+  color: white;
+  background-color: transparent;
+}
+.gradient {
+  background: linear-gradient(rgba(0, 0, 0, 0.791), 50%, transparent);
+}
+</style>

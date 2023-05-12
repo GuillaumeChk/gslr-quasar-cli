@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="wrapper">
     <h4>Prestations</h4>
 
     <!-- <p>Exemples de prestations…</p> -->
