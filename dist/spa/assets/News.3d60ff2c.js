@@ -1,1 +1,0 @@
-import{Q as s}from"./QPage.759032fc.js";import{_ as t,F as r,G as a,I as o,M as e}from"./index.61a1c427.js";import"./render.9f33967d.js";const c={},n=e("h4",null,"Actualit\xE9s",-1),_=e("p",null,"L'entreprise GSLR Agencements ouvre ses portes !",-1);function p(i,l){return r(),a(s,{class:"wrapper"},{default:o(()=>[n,_]),_:1})}var m=t(c,[["render",p]]);export{m as default};
