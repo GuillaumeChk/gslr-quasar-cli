@@ -1,6 +1,6 @@
 <template>
   <q-img src="../assets/mountain.jpg" fit="cover" class="top-image"> </q-img>
-  <q-page class="wrapper">
+  <q-page class="wrapper q-pa-md">
     <h4>Entreprise</h4>
 
     <p>GSLR Agencements est heureuse de vous découvrir !</p>
@@ -11,7 +11,7 @@
 
 <style>
 .top-image {
-  margin-top: -93px;
+  margin-top: -95px;
   width: 100%;
   height: 100vh;
   overflow: hidden;

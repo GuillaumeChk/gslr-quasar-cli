@@ -12,7 +12,25 @@
         class="justify-between q-pa-md"
         :class="route.name === 'entreprise' ? 'gradient' : ''"
       >
-        <div class="row">
+        <q-btn
+          flat
+          dense
+          round
+          class="lt-sm q-mx-sm"
+          icon="menu"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
+        />
+        <div class="lt-sm q-pa-xs q-pa-md row inline">
+          <q-img
+            style="max-width: 150px; min-width: 100px"
+            src="GSLR_3_b.svg"
+            fit="contain"
+          ></q-img>
+        </div>
+        <div class="lt-sm" style="width: 50px"></div>
+
+        <div class="gt-xs row items-center">
           <q-btn
             flat
             dense
@@ -22,7 +40,7 @@
             aria-label="Menu"
             @click="toggleLeftDrawer"
           />
-          <div class="q-pa-xs q-px-lg">
+          <div class="q-py-md q-pl-md row inline">
             <q-img
               style="max-width: 150px; min-width: 100px"
               src="GSLR_3_b.svg"
@@ -30,10 +48,11 @@
             ></q-img>
           </div>
         </div>
-        <div class="gt-xs q-gutter-x-lg q-px-md">
+
+        <div class="gt-xs q-px-sm">
           <div
             style="
-              font-size: 1.8em;
+              font-size: 1.7em;
               font-weight: 500;
               letter-spacing: 0;
               font-family: 'Inconsolata';
@@ -43,25 +62,24 @@
             GSLR Agencements
           </div>
           <div
-            class="gt-sm column inline text-uppercase text-weight-light"
+            class="gt-md q-pl-xl column inline text-uppercase text-weight-light"
             style="font-size: 1em"
           >
-            Menuiserie    —    Agencements    —    Pose de cuisine    —    Sur
-            mesure
+            Menuiserie    —    Pose de cuisine    —    Sur mesure
           </div>
         </div>
-        <div
-          class="gt-xs column q-gutter-y-sm justify-evenly"
-          style="font-size: 0.6em"
-        >
-          <div style="display: inline-block; white-space: nowrap">
+        <div class="gt-xs column q-gutter-y-sm justify-evenly">
+          <div
+            style="display: inline-block; white-space: nowrap; font-size: 14px"
+          >
             <q-icon name="phone" />  +41 00 000 00 00
           </div>
-          <div style="display: inline-block; white-space: nowrap">
+          <div
+            style="display: inline-block; white-space: nowrap; font-size: 14px"
+          >
             <q-icon name="mail" />  contact@gslr.ch
           </div>
         </div>
-        <div class="lt-sm" style="width: 50px"></div>
       </q-toolbar>
 
       <!-- <q-tabs
@@ -104,7 +122,7 @@
           <q-icon name="close" size="lg" class="textSize" />
         </q-btn>
       </div>
-      <q-list class="q-gutter-y-sm text-brand">
+      <q-list class="q-gutter-y-sm text-brand q-pl-xl">
         <q-item
           v-for="route in routesList"
           clickable
