@@ -1,43 +1,55 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header reveal :reveal-offset="100" elevated class="bg-white text-brand">
-      <q-toolbar class="q-pa-xl justify-between">
+      <q-toolbar class="justify-between q-pa-md">
         <q-btn
           flat
           dense
           round
-          class="lt-sm"
+          class="lt-sm q-mx-sm"
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <div class="column q-pr-xl justify-center">
+        <div class="q-pa-xs q-px-lg">
           <q-img
             style="max-width: 150px; min-width: 100px"
             src="GSLR_3_b.svg"
             fit="contain"
           ></q-img>
         </div>
-        <div class="column gt-xs text-center">
-          <span
-            style="font-size: 2.5em; white-space: break-spaces"
-            class="text-weight-normal"
-            >GSLR Agencements</span
+        <div class="gt-xs q-gutter-x-lg q-px-md">
+          <div
+            style="
+              font-size: 1.8em;
+              font-weight: 500;
+              letter-spacing: 0;
+              font-family: 'Inconsolata';
+            "
+            class="gt-xs column inline"
           >
-          <span class="wrap text-weight-light" style="font-size: 1.3em">
+            GSLR Agencements
+          </div>
+          <div
+            class="gt-sm column inline text-uppercase text-weight-light"
+            style="font-size: 1em"
+          >
             Menuiserie    —    Agencements    —    Pose de cuisine    —    Sur
             mesure
-          </span>
+          </div>
         </div>
         <div
-          class="column q-gutter-y-sm justify-evenly gt-sm text-grey"
-          style="font-size: 0.8em"
+          class="gt-xs column q-gutter-y-sm justify-evenly text-grey"
+          style="font-size: 0.6em"
         >
-          <span>2000  Neuchâtel</span>
-          <span>Tél: +41 XX XXX XX XX</span>
-          <span>Email: contact@gslr.ch</span>
+          <div style="display: inline-block; white-space: nowrap">
+            <q-icon name="phone" />  +41 00 000 00 00
+          </div>
+          <div style="display: inline-block; white-space: nowrap">
+            <q-icon name="mail" />  contact@gslr.ch
+          </div>
         </div>
-        <div class="lt-sm"></div>
+        <div class="lt-sm" style="width: 50px"></div>
       </q-toolbar>
 
       <q-tabs
@@ -46,6 +58,7 @@
         dense
         align="justify"
         class="gt-xs bg-brand text-white"
+        style="font-size: 10px"
       >
         <q-route-tab
           v-for="route in routesList"
@@ -54,8 +67,10 @@
           exact
           :to="route.to"
         >
-          <span class="gt-sm biggerText text-uppercase">{{ route.title }}</span>
-          <span class="lt-md text-uppercase">{{ route.title }}</span>
+          <span class="gt-sm" style="font-size: 0.9em">{{ route.title }}</span>
+          <span class="lt-md text-uppercase" style="font-size: 0.9em">{{
+            route.title
+          }}</span>
         </q-route-tab>
       </q-tabs>
     </q-header>
@@ -134,9 +149,3 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
-
-<style>
-.biggerText {
-  font-size: 1em;
-}
-</style>

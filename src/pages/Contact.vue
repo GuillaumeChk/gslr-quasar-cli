@@ -2,30 +2,48 @@
   <q-page>
     <h4>Contact</h4>
 
-
     <h6>GSLR Agencements</h6>
-    <p>
-					
-					<address class="address">
-						
-						<q-icon name="location_city" /> 2000 Neuchâtel, SUISSE <br> 
-						<div class="q-pa-xs q-gutter-sm">
-							<q-btn rounded unelevated  class="bg-brand text-white" :icon="addressCopied ? 'assignment_turned_in' : 'content_copy' "  @click="copyAddress('2000 Neuchâtel, SUISSE')"  > Copier</q-btn>
-							<q-btn rounded unelevated class="bg-brand text-white" icon="directions" href="https://goo.gl/maps/LDFn9N6ciP9rVptH7"  target="_blank" > Google Maps</q-btn>
-						</div>
-						<q-icon name="email" /> E-Mail : 
-						<a href="mailto:info@desfees.fr">contact@gslr.ch</a><br />
-						<q-icon name="phone" /> Téléphone : 
-						<a href="tel:+41">+41 XXXXXXXXX</a><br />
-            <q-btn
-						rounded
-						unelevated
-						label="Appeler"
-						class="bg-brand text-white" href="tel:+41"
-						icon="call"
-						/>
-					</address>
-				</p>
+    <address class="address q-gutter-md column">
+      <div style="display: inline-block; white-space: nowrap">
+        <q-icon name="location_city" /> 2000 Neuchâtel, SUISSE
+        <div class="q-pa-xs q-gutter-sm">
+          <q-btn
+            rounded
+            unelevated
+            class="bg-brand text-white"
+            :icon="addressCopied ? 'assignment_turned_in' : 'content_copy'"
+            @click="copyAddress('2000 Neuchâtel, SUISSE')"
+            > Copier</q-btn
+          >
+          <q-btn
+            rounded
+            unelevated
+            class="bg-brand text-white"
+            icon="directions"
+            href="https://goo.gl/maps/LDFn9N6ciP9rVptH7"
+            target="_blank"
+            > Google Maps</q-btn
+          >
+        </div>
+      </div>
+      <div style="display: inline-block; white-space: nowrap">
+        <q-icon name="phone" />  <a href="tel:+41">+41 XXXXXXXXX</a>
+        <div>
+          <q-btn
+            rounded
+            unelevated
+            label="Appeler"
+            class="bg-brand text-white"
+            href="tel:+41"
+            icon="call"
+          />
+        </div>
+      </div>
+      <div style="display: inline-block; white-space: nowrap">
+        <q-icon name="email" />  
+        <a href="mailto:info@desfees.fr">contact@gslr.ch</a>
+      </div>
+    </address>
 
     <h6>Horaires d’ouverture :</h6>
 
@@ -49,23 +67,22 @@
 </template>
 
 <script setup>
-import { copyToClipboard } from 'quasar'
-import { ref } from 'vue';
+import { copyToClipboard } from "quasar";
+import { ref } from "vue";
 
 let addressCopied = ref(false);
 
 function copyAddress(text) {
-	copyToClipboard(text)
-	.then(() => {
-    // success!
-	console.log("copié !")
-	addressCopied.value = true;
-	})
-	.catch(() => {
-		// fail
-		console.log("fail !")
-		
-	})
+  copyToClipboard(text)
+    .then(() => {
+      // success!
+      console.log("copié !");
+      addressCopied.value = true;
+    })
+    .catch(() => {
+      // fail
+      console.log("fail !");
+    });
 }
 </script>
 
@@ -88,12 +105,12 @@ function copyAddress(text) {
   border: none;
 }
 
-.address{
-	font-style: normal;
+.address {
+  font-style: normal;
 }
 
-a{
-	text-decoration: none;
-	color: #121212;
+a {
+  text-decoration: none;
+  color: #121212;
 }
 </style>
