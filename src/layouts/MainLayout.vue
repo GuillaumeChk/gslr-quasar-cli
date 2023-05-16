@@ -33,7 +33,7 @@
             flat
             dense
             round
-            class="q-mx-sm"
+            class="lt-sm q-mx-sm"
             icon="menu"
             aria-label="Menu"
             @click="toggleLeftDrawer"
