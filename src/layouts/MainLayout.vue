@@ -3,15 +3,13 @@
     <q-header
       id="navbar"
       :class="
-        route.name === 'entreprise' ? 'navbar-transparent' : 'navbar-solid'
+        route.name === 'entreprise'
+          ? 'navbar-transparent gradient'
+          : 'navbar-solid'
       "
       height-hint="98"
     >
-      <q-toolbar
-        id="toolbar"
-        class="justify-between q-pa-md"
-        :class="route.name === 'entreprise' ? 'gradient' : ''"
-      >
+      <q-toolbar id="toolbar" class="justify-between q-pa-md">
         <q-btn
           flat
           dense
@@ -82,12 +80,12 @@
         </div>
       </q-toolbar>
 
-      <!-- <q-tabs
+      <q-tabs
         v-model="tab"
         no-caps
         dense
         align="justify"
-        class="gt-xs bg-brand text-white"
+        class="gt-xs"
         style="font-size: 10px"
       >
         <q-route-tab
@@ -102,7 +100,7 @@
             route.title
           }}</span>
         </q-route-tab>
-      </q-tabs> -->
+      </q-tabs>
     </q-header>
 
     <q-drawer
@@ -208,11 +206,13 @@ function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("navbar").classList.add("navbar-solid");
     document.getElementById("navbar").classList.remove("navbar-transparent");
-    document.getElementById("toolbar").classList.remove("gradient");
+    // document.getElementById("toolbar").classList.remove("gradient");
+    document.getElementById("navbar").classList.remove("gradient");
   } else {
     document.getElementById("navbar").classList.add("navbar-transparent");
     document.getElementById("navbar").classList.remove("navbar-solid");
-    document.getElementById("toolbar").classList.add("gradient");
+    // document.getElementById("toolbar").classList.add("gradient");
+    document.getElementById("navbar").classList.add("gradient");
   }
 }
 </script>

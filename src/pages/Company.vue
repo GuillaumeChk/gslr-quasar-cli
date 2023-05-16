@@ -16,4 +16,10 @@
   height: 100vh;
   overflow: hidden;
 }
+
+@media (min-width: 600px) {
+  .top-image {
+    margin-top: -131px;
+  }
+}
 </style>
