@@ -5,14 +5,17 @@
     <h6>GSLR Agencements</h6>
     <address class="address q-gutter-md column">
       <div style="display: inline-block; white-space: nowrap">
-        <q-icon name="location_city" /> 2000 Neuchâtel, SUISSE
+        <q-icon name="location_city" /> 
+        <p>La Coudre</p>
+        <p>2000 Neuchâtel</p>
+        <p>SUISSE</p>
         <div class="q-pa-xs q-gutter-sm">
           <q-btn
             rounded
             unelevated
             class="bg-brand text-white"
             :icon="addressCopied ? 'assignment_turned_in' : 'content_copy'"
-            @click="copyAddress('2000 Neuchâtel, SUISSE')"
+            @click="copyAddress('La Coudre, 2000 Neuchâtel, SUISSE')"
             > Copier</q-btn
           >
           <q-btn
@@ -27,7 +30,7 @@
         </div>
       </div>
       <div style="display: inline-block; white-space: nowrap">
-        <q-icon name="phone" />  <a href="tel:+41">+41 XXXXXXXXX</a>
+        <q-icon name="phone" />  <a href="tel:+41">+41 X XX XX XX XX</a>
         <div>
           <q-btn
             rounded
@@ -41,7 +44,7 @@
       </div>
       <div style="display: inline-block; white-space: nowrap">
         <q-icon name="email" />  
-        <a href="mailto:info@desfees.fr">contact@gslr.ch</a>
+        <a href="mailto:contact@gslr.ch">contact@gslr.ch</a>
       </div>
     </address>
 
@@ -50,7 +53,6 @@
     <p>Du lundi au vendredi</p>
     <p>De 7h30 à 12h00 et de 13h15 à 17h30</p>
 
-    <h4 class="q-py-lg text-uppercase text-weight-light">Carte</h4>
     <div class="map-container">
       <iframe
         class="responsive-iframe"

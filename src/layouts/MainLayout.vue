@@ -20,11 +20,13 @@
           @click="toggleLeftDrawer"
         />
         <div class="lt-sm q-pa-xs q-pa-md row inline">
+        <q-route-tab to="/" rounded class="homeLogoTab"
           <q-img
             style="max-width: 150px; min-width: 100px"
             src="GSLR_3_b.svg"
             fit="contain"
           ></q-img>
+          <q-router-tab>
         </div>
         <div class="lt-sm" style="width: 50px"></div>
 
@@ -70,12 +72,12 @@
           <div
             style="display: inline-block; white-space: nowrap; font-size: 14px"
           >
-            <q-icon name="phone" />  +41 00 000 00 00
+            <q-icon name="phone" />  <a href="tel:+41">+41 X XX XX XX XX</a>
           </div>
           <div
             style="display: inline-block; white-space: nowrap; font-size: 14px"
           >
-            <q-icon name="mail" />  contact@gslr.ch
+            <q-icon name="mail" />  <a href="mailto:contact@gslr.ch">contact@gslr.ch</a>
           </div>
         </div>
       </q-toolbar>
@@ -139,6 +141,32 @@
           </q-item-section>
         </q-item>
       </q-list>
+
+      <q-separator inset />
+
+      <q-route-tab to="/" rounded class="homeLogoTab"
+          <q-img
+            style="max-width: 150px; min-width: 100px"
+            src="GSLR_3_b.svg"
+            fit="contain"
+          ></q-img>
+          <q-router-tab>
+
+      <q-separator inset />
+
+      <div class="column q-gutter-y-sm justify-evenly">
+          <div
+            style="display: inline-block; white-space: nowrap; font-size: 14px"
+          >
+            <q-icon name="phone" />  <a href="tel:+41">+41 X XX XX XX XX</a>
+          </div>
+          <div
+            style="display: inline-block; white-space: nowrap; font-size: 14px"
+          >
+            <q-icon name="mail" />  <a href="mailto:contact@gslr.ch">contact@gslr.ch</a>
+          </div>
+        </div>
+
     </q-drawer>
 
     <q-page-container>

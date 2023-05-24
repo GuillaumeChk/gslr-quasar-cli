@@ -1,9 +1,18 @@
 <template>
   <q-page class="wrapper q-pa-md">
-    <h4>Prestations</h4>
-
-    <!-- <p>Exemples de prestations…</p> -->
+<q-tabs
+        v-model="tab"
+        dense
+        
+      >
+        <q-tab name="menuiserie" label="Menuiserie" />
+        <q-tab name="cuisine" label="Cuisine" />
+        <q-tab name="sur mesure" label="Sur mesure" />
+      </q-tabs>
   </q-page>
 </template>
 
-<script setup></script>
+<script setup>
+let tab = ref("menuiserie");
+
+</script>
