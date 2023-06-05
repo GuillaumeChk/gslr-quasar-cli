@@ -8,7 +8,7 @@ Website GSLR Agencements
 quasar build
 ```
 
-`(quasar serve)`
+`(quasar serve dist/spa)`
 
 commit
 

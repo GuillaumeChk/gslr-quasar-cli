@@ -18,16 +18,24 @@
           @click="toggleLeftDrawer"
         />
         <div class="lt-sm q-pa-xs q-pa-md row inline">
-          <q-img
-            no-spinner
-            style="max-width: 150px; min-width: 100px"
-            :src="
-              route.name === 'home'
-                ? 'src/assets/GSLR_sapin_a_white.svg'
-                : 'src/assets/GSLR_sapin_a.svg'
+          <router-link to="/" rounded class="homeLogoTab">
+            <q-img
+              v-if="route.name === 'home'"
+              no-spinner
+              style="max-width: 150px; min-width: 100px"
+              src="../assets/GSLR_sapin_a_white.svg
             "
-            fit="contain"
-          ></q-img>
+              fit="contain"
+            ></q-img>
+            <q-img
+              v-else
+              no-spinner
+              style="max-width: 150px; min-width: 100px"
+              src="../assets/GSLR_sapin_a.svg
+            "
+              fit="contain"
+            ></q-img
+          ></router-link>
         </div>
         <div class="lt-sm" style="width: 50px"></div>
 
@@ -44,13 +52,19 @@
           <div class="q-py-md q-pl-md row inline">
             <router-link to="/" rounded class="homeLogoTab">
               <q-img
+                v-if="route.name === 'home'"
                 no-spinner
                 style="max-width: 150px; min-width: 100px"
-                :src="
-                  route.name === 'home'
-                    ? 'src/assets/GSLR_sapin_a_white.svg'
-                    : 'src/assets/GSLR_sapin_a.svg'
-                "
+                src="../assets/GSLR_sapin_a_white.svg
+            "
+                fit="contain"
+              ></q-img>
+              <q-img
+                v-else
+                no-spinner
+                style="max-width: 150px; min-width: 100px"
+                src="../assets/GSLR_sapin_a.svg
+            "
                 fit="contain"
               ></q-img>
             </router-link>
@@ -164,7 +178,7 @@
         <q-img
           no-spinner
           style="max-width: 150px; min-width: 100px"
-          src="src/assets/GSLR_sapin_a.svg
+          src="../assets/GSLR_sapin_a.svg
           "
           fit="contain"
         ></q-img>
