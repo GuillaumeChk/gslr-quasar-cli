@@ -5,10 +5,12 @@
     <h6>GSLR Agencements</h6>
     <address class="address q-gutter-md column">
       <div style="display: inline-block; white-space: nowrap">
-        <q-icon name="location_city" /> 
-        <p>La Coudre</p>
-        <p>2000 Neuchâtel</p>
-        <p>SUISSE</p>
+        <q-icon name="location_city" />
+        <p>
+          La Coudre <br />
+          2000 Neuchâtel <br />
+          SUISSE
+        </p>
         <div class="q-pa-xs q-gutter-sm">
           <q-btn
             rounded
@@ -52,6 +54,8 @@
 
     <p>Du lundi au vendredi</p>
     <p>De 7h30 à 12h00 et de 13h15 à 17h30</p>
+
+    <br />
 
     <div class="map-container">
       <iframe

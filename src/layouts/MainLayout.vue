@@ -3,9 +3,7 @@
     <q-header
       id="navbar"
       :class="
-        route.name === 'entreprise'
-          ? 'navbar-transparent gradient'
-          : 'navbar-solid'
+        route.name === 'home' ? 'navbar-transparent gradient' : 'navbar-solid'
       "
       height-hint="98"
     >
@@ -20,13 +18,16 @@
           @click="toggleLeftDrawer"
         />
         <div class="lt-sm q-pa-xs q-pa-md row inline">
-        <q-route-tab to="/" rounded class="homeLogoTab"
           <q-img
+            no-spinner
             style="max-width: 150px; min-width: 100px"
-            src="GSLR_3_b.svg"
+            :src="
+              route.name === 'home'
+                ? 'src/assets/GSLR_sapin_a_white.svg'
+                : 'src/assets/GSLR_sapin_a.svg'
+            "
             fit="contain"
           ></q-img>
-          <q-router-tab>
         </div>
         <div class="lt-sm" style="width: 50px"></div>
 
@@ -41,11 +42,18 @@
             @click="toggleLeftDrawer"
           />
           <div class="q-py-md q-pl-md row inline">
-            <q-img
-              style="max-width: 150px; min-width: 100px"
-              src="GSLR_3_b.svg"
-              fit="contain"
-            ></q-img>
+            <router-link to="/" rounded class="homeLogoTab">
+              <q-img
+                no-spinner
+                style="max-width: 150px; min-width: 100px"
+                :src="
+                  route.name === 'home'
+                    ? 'src/assets/GSLR_sapin_a_white.svg'
+                    : 'src/assets/GSLR_sapin_a.svg'
+                "
+                fit="contain"
+              ></q-img>
+            </router-link>
           </div>
         </div>
 
@@ -72,12 +80,20 @@
           <div
             style="display: inline-block; white-space: nowrap; font-size: 14px"
           >
-            <q-icon name="phone" />  <a href="tel:+41">+41 X XX XX XX XX</a>
+            <q-icon name="phone" />  <a
+              :style="route.name === 'home' ? 'color:white' : 'color: #395875'"
+              href="tel:+41"
+              >+41 X XX XX XX XX</a
+            >
           </div>
           <div
             style="display: inline-block; white-space: nowrap; font-size: 14px"
           >
-            <q-icon name="mail" />  <a href="mailto:contact@gslr.ch">contact@gslr.ch</a>
+            <q-icon name="mail" />  <a
+              :style="route.name === 'home' ? 'color:white' : 'color: #395875'"
+              href="mailto:contact@gslr.ch"
+              >contact@gslr.ch</a
+            >
           </div>
         </div>
       </q-toolbar>
@@ -142,31 +158,38 @@
         </q-item>
       </q-list>
 
-      <q-separator inset />
+      <q-separator class="q-my-lg q-mx-xl" inset />
 
-      <q-route-tab to="/" rounded class="homeLogoTab"
-          <q-img
-            style="max-width: 150px; min-width: 100px"
-            src="GSLR_3_b.svg"
-            fit="contain"
-          ></q-img>
-          <q-router-tab>
+      <router-link to="/" rounded class="homeLogoTab column items-center">
+        <q-img
+          no-spinner
+          style="max-width: 150px; min-width: 100px"
+          src="src/assets/GSLR_sapin_a.svg
+          "
+          fit="contain"
+        ></q-img>
+      </router-link>
 
-      <q-separator inset />
+      <q-separator class="q-my-lg q-mx-xl" inset />
 
-      <div class="column q-gutter-y-sm justify-evenly">
-          <div
-            style="display: inline-block; white-space: nowrap; font-size: 14px"
+      <div class="column q-gutter-y-sm items-center">
+        <div
+          style="display: inline-block; white-space: nowrap; font-size: 14px"
+        >
+          <q-icon name="phone" />  <a style="color: #395875" href="tel:+41"
+            >+41 X XX XX XX XX</a
           >
-            <q-icon name="phone" />  <a href="tel:+41">+41 X XX XX XX XX</a>
-          </div>
-          <div
-            style="display: inline-block; white-space: nowrap; font-size: 14px"
-          >
-            <q-icon name="mail" />  <a href="mailto:contact@gslr.ch">contact@gslr.ch</a>
-          </div>
         </div>
-
+        <div
+          style="display: inline-block; white-space: nowrap; font-size: 14px"
+        >
+          <q-icon name="mail" />  <a
+            style="color: #395875"
+            href="mailto:contact@gslr.ch"
+            >contact@gslr.ch</a
+          >
+        </div>
+      </div>
     </q-drawer>
 
     <q-page-container>
@@ -187,7 +210,7 @@ const routesList = [
   {
     title: "Entreprise",
     icon: "apartment",
-    to: "/",
+    to: "/entreprise",
   },
   {
     title: "Prestations",
@@ -256,6 +279,10 @@ function scrollFunction() {
   background-color: transparent;
 }
 .gradient {
-  background: linear-gradient(rgba(0, 0, 0, 0.791), 50%, transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.633), 85%, transparent);
+}
+
+a {
+  text-decoration: none;
 }
 </style>
